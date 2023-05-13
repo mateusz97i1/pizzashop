@@ -1,0 +1,30 @@
+{%extends 'mainSite.html'%}
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%block menu%}
+    {% csrf_token %}
+    <div class="menu-menu">
+        <div class="chuj">
+            <h1>Take an Order</h1>
+            
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="order-choice">
+                {{form.as_table}}
+                <input type="submit" name="" id="order-btn-take" value="Order">
+            </form>    
+                </div>
+        </div>
+    </div>
+
+    {%endblock%}
+    
+</body>
+</html>

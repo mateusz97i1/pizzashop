@@ -1,0 +1,50 @@
+{%extends 'mainSite.html'%}
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serach</title>
+</head>
+<body>
+    {%block menu%}
+  
+    {% csrf_token %}
+    <div class="menu-menu">
+        <div class="chuj">
+            <h1>Search results for "{{ query }}"</h1>
+            {% if results %}
+            <table class="main-menu-table">
+                
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Ingredients</th>
+                        <th>32cm</th>
+                        <th>42cm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in results %}
+                    <tr>
+                        <td>{{ result.name }}</td>
+                        <td>{{ result.ingredients }}</td>
+                        <td>{{ result.priceSmall }} zł</td>
+                        <td>{{ result.priceBig }} zł</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            {% else %}
+
+                <p class="noResult">No results found.</p>
+            {% endif %}
+
+        </div>
+    </div>
+    {%endblock%}
+    
+</body>
+</html>

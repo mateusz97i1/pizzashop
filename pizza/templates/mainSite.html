@@ -1,0 +1,104 @@
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'mainP.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Pizza</title>
+</head>
+<body>
+    {% csrf_token %}
+    <header class="header-main">
+        <div class="logo">
+            <a href="{%url 'pizza:main'%}">
+                <img id="photo1" src="{%static 'pizzaLogo.png'%}" alt="Pizza-logo">
+            </a>
+
+        </div>
+        <div class="main-menu">
+            <ul>
+                <li><a href="{%url 'pizza:menu'%}">Menu</a></li>
+                <li><a href="{%url 'pizza:order'%}">Order</a></li>
+                <li><a href="{%url 'pizza:restaurants'%}">Restaurants</a></li>
+                <li><a href="{%url 'pizza:contact'%}">Contact</a></li>
+            </ul>
+        </div>
+        <div class="burger-MENU"></div>
+    </header>
+   
+    {%block menu%}
+    <h1 class="main-h1">BASILIA PIZZA E <br>
+        PASTA SICILIANA</h1>
+    <div class="description">
+        <p>Dear Mr and MS <br>
+            We are pleased to invite you to our family restaurant Basiliabr <br>   
+            We unsure that, just before serving, all our dishes are prepared according to all Traditianol Romas recipes, which our chef takes care of
+        </p>
+    </div>
+
+    <button class="order-btn">
+        <a href="{%url 'pizza:order'%}">Order</a>
+    </button>
+
+    <h2 class="h2-main"> Basiliabr <br>
+        Original <br>
+        Roma <br>
+        Kitchen
+    </h2>
+    <img id="img02" src="{%static 'img2.png'%}" alt="inside">
+    <div id="descripton02">
+        <p id="p01">
+            A piece of wood-fired stone gives an excellent taste of forest and nature. <br>
+             The sun-filled interior of the transfer of thoughts to the south of Italy, <br>
+              the presentation of joy, fills with optimism. Basilia is the perfect place <br>
+               for a beautiful evening by candlelight and a glass of Italian wine, <br>
+                or for a bustling family dinner - straight from Sicily.
+        </p>
+
+        <p id="p02">
+        We assure you that all our dishes are prepared in accordance with Italian recipes, <br>
+         just before serving, under the watchful eye of the chef. Adapt the products you use to Italian ingredients, <br>
+          try to make our menu healthy and with a unique taste. offer with a culinary offer we offer an exhibition of works by young artists.
+        </p>
+    </div>
+
+    <button class="restaurant-btn">
+        <a href="{%url 'pizza:restaurants'%}">Restaurants</a>
+    </button>
+    <img id="img03" src="{%static 'img3.png'%}" alt="Img3">
+    <div class="menu-white">
+        <h3>Menu</h3>
+        <div class="descripton03">
+          <p id="p03"> 
+            Ladies and Gentlemen, We are pleased to order you to our family restaurant Basilia.</p>
+        <p>We assure you that all our dishes are prepared according to traditional Italian recipes, just before serving, <br>
+             under the watchful eye of the chef. We use original Italian ingredients to prepare our dishes, we try to make our <br>
+              menu healthy and unique in taste. Simultaneously with the culinary offer, <br>
+               we offer you exhibitions of works by young artists.
+            </p>  
+        </div>
+        <button class="contact-btn">
+        <a href="{%url 'pizza:contact'%}">Contact</a>
+        </button>
+    </div>
+
+    <div class="menu-bottom">
+        <h4>Adress</h4>
+        <a href="https://www.google.com/maps/@52.1340455,21.0632926,3a,71.3y,228.64h,82.03t/data=!3m6!1e1!3m4!1s-6IMaKPZdfdiPKqH9w-QSw!2e0!7i16384!8i8192"> Ul. Czermin</a>
+        <p>Opening hours:  mon-sat <em> 7am-11pm</em></p>
+        <p>Call us</p>
+        <a href="{%url 'pizza:contact'%}">00 48 222 792 22</a>
+        <div id="p04">
+            <p id="p05">© 2023 BASILIABR PIZZA E PASTA SICILIANA. All Rights Reserved by mateusz</p>
+        </div>
+
+    </div>
+
+    <script src="{%static 'main.js'%}"></script>
+    {%endblock%}
+</body>
+</html>

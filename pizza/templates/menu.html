@@ -1,0 +1,53 @@
+ {% extends 'mainSite.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Menu</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    {%block menu%}
+
+    <form action="{%url 'pizza:search-menu'%}" method="get" class="search-bar">
+        {% csrf_token %}
+        <div>
+            <input type="search" placeholder="Search menu" name="query" >
+            <input type="submit" value="Search" name="searched">
+        </div>
+    </form>
+    <div class="menu-menu">
+        <div class="chuj">
+                <h1>Menu</h1>
+            <table class="main-menu-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Ingredients</th>
+                        <th>32cm</th>
+                        <th>42cm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for menuList in object_list%}
+                    <tr>
+                        <td>{{menuList.name}}</td>
+                        <td>{{menuList.ingredients}}</td>
+                        <td>{{menuList.priceSmall}} zł</td>
+                        <td>{{menuList.priceBig}} zł</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+    
+        </div>
+
+    </div>
+    
+    {% endblock %}
+    
+</body>
+</html>

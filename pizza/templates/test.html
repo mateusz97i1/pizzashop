@@ -1,0 +1,24 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <title>Test</title>
+</head>
+<body>
+    <main>
+        <button class="changeBgc">dark/light</button>
+            <div class="colors">
+                <button class="btn01">Red</button>
+                <button class="btn02">Green</button> 
+            </div>
+        
+        <div class="squere"></div>
+        <button class="btn03"> Restore colors</button>
+
+    </main>
+    <script src="{% static 'test.js' %}"></script>
+</body>
+</html>
